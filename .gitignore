@@ -1,0 +1,8 @@
+.metadata
+.recommenders
+.metadata/**
+.recommenders/**
+gs-accessing**
+Servers
+RemoteSystemsTempFiles
+**/target/**

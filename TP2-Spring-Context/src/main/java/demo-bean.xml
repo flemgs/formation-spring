@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="developpeur" class="fr.orsys.context.Developpeur"
+		lazy-init="default">
+		<property name="nom" value="DRIDI"></property>
+		<property name="anneesExperience" value="7"></property>
+	</bean>
+	
+	<bean id="chefDeveloppeur" class="fr.orsys.context.Developpeur"
+		lazy-init="default">
+		<property name="nom" value="DRIDI2"></property>
+		<property name="anneesExperience" value="18"></property>
+	</bean>
+
+	<bean id="societeDeveloppeur" class="fr.orsys.context.SocieteDevLogiciel">
+		<property name="developpeur">
+			<ref bean="developpeur"></ref>
+		</property>
+		<property name="chefDeveloppeur">
+			<ref bean="chefDeveloppeur"></ref>
+		</property>
+		<property name="nomSociete" value="maSociete"></property>
+	</bean>
+	
+</beans>
