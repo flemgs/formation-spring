@@ -8,13 +8,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class StudentJDBCTemplate implements StudentDAO {
 
-	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 	
 
 	public void setDataSource(DataSource ds) {
-		// TODO Auto-generated method stub
-		this.dataSource = ds;
 		this.jdbcTemplateObject = new JdbcTemplate(ds);
 	}
 

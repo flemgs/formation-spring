@@ -1,10 +1,11 @@
-package fr.orsys.jdbc;
+package fr.orsys.orm;
 
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
 @Configuration
 public class AppConfig {
@@ -18,11 +19,10 @@ public class AppConfig {
 		ds.setPassword("root");
 		return ds;
 	}
-
-	@Bean
-	public StudentJDBCTemplate studentJDBCTemplate() {
-		StudentJDBCTemplate studentJDBCTemplate = new StudentJDBCTemplate();
-		studentJDBCTemplate.setDataSource(dataSource());
-		return studentJDBCTemplate;
-	}
+	
+//	@Bean
+//	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+//		LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
+//		entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
+//	}
 }
