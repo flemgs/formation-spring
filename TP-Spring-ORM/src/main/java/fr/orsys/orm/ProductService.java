@@ -27,7 +27,8 @@ public class ProductService {
 		}
 	}
 	
-	@Transactional(propagation = Propagation.MANDATORY)
+	//@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public List<Product> listAll() {
 		return productDao.findAll();
 	}

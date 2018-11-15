@@ -3,11 +3,12 @@ package fr.orsys.orm;
 import java.util.Arrays;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		ProductService productService = context.getBean(ProductService.class);
 		
